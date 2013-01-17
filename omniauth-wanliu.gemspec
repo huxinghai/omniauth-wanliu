@@ -14,6 +14,6 @@ Gem::Specification.new do |gem|
   gem.name          = "omniauth-wanliu"
   gem.require_paths = ["lib"]
   gem.version       = Omniauth::Wanliu::VERSION
-  
-  gem.add_dependency("omniauth-oauth", "~> 1.0")
+
+  gem.add_dependency("omniauth-oauth2", "~> 1.1.0")
 end

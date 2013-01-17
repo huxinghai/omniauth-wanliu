@@ -8,5 +8,5 @@ gem 'omniauth'
 gem 'omniauth-oauth2'
 
 group :test do 
-	gem 'rspec-rails'
+    gem 'rspec-rails'
 end
