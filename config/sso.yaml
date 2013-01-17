@@ -1,0 +1,4 @@
+accounts:
+  provider_url: http://localhost:3002
+  app_id: 4224b3ed9c840c0d7b284f          
+  app_secret: oXIuKylcvf73EXe6R0Lhooxms2hfxcna7yfQs+9acHc=
