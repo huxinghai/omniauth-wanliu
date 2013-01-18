@@ -4,8 +4,8 @@ require File.expand_path('../lib/omniauth-wanliu/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["kaka"]
   gem.email         = ["huxinghai1988@gmail.com"]
-  gem.description   = %q{omniauth accounts }
-  gem.summary       = %q{omniauth accounts}
+  gem.description   = %q{wanliu omniauth accounts support ajax login}
+  gem.summary       = %q{wanliu omniauth accounts support ajax login}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($\)
