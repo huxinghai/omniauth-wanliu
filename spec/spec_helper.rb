@@ -1,5 +1,7 @@
-require 'rubygems'
+require "json"
 require "rspec"
-require 'active_support/all' 
+require "http"
+require "application_controller"
 
-require File.expend_path("../../lib/omniauth-wanliu", __FILE__)
+require File.expand_path("../../lib/omniauth-wanliu", __FILE__)
+require 'ajax_auth_controller'

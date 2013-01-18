@@ -16,4 +16,5 @@ Gem::Specification.new do |gem|
   gem.version       = Omniauth::Wanliu::VERSION
 
   gem.add_dependency("omniauth-oauth2", "~> 1.1.0")
+  gem.add_development_dependency("rspec")
 end
