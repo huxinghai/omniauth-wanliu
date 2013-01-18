@@ -31,7 +31,7 @@ AjaxAuth.prototype.setParams = function(options){
 
 AjaxAuth.prototype.loginSuccessCallback = function(data){}
 
-AjaxAuth.prototype.RegistreSuccess = function(callback){
+AjaxAuth.prototype.RegistreLoginSuccess = function(callback){
     if(typeof callback == "function") this.loginSuccessCallback = callback
     pm.bind(this.default_params.message_type, $.proxy(function(data){             
         this.loginSuccessCallback.apply(this, data)
@@ -40,7 +40,7 @@ AjaxAuth.prototype.RegistreSuccess = function(callback){
 
 AjaxAuth.prototype.setupAjaxAuthCallback = function(url){}
 
-AjaxAuth.prototype.setupAjaxAuth = function(callback){
+AjaxAuth.prototype.setupRetrieveLoginUrlCallback = function(callback){
 
     if(typeof callback == "function") this.setupAjaxAuthCallback = callback        
 

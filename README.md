@@ -37,7 +37,7 @@ And then execute:
 1. <code>ApplicationController</code> 控制器包含ajax helper方法, 例如:
     
     ```ruby
-        OmniAuth::Wanliu::AjaxHelpers 
+       include OmniAuth::Wanliu::AjaxHelpers 
     ```
 
 2. 在登陆过虑器方法添加ajax请求<code>ajax_set_response_headers</code>方法设置头部，例如:   
@@ -63,11 +63,11 @@ And then execute:
     //= require wanliu/ajax_auth_client.js
 
     #ajax验证， 传参平台登陆页面url
-    AjaxAuthClient.setupAjaxAuth(function(url){                
+    AjaxAuthClient.setupRetrieveLoginUrlCallback(function(url){                
     })
 
     #注册登陆成功事件
-    AjaxAuthClient.RegistreSuccess(function(user){        
+    AjaxAuthClient.RegistreLoginSuccess(function(user){        
     })
 
   ```
