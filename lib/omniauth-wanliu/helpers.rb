@@ -16,8 +16,8 @@ module OmniAuth
       def auth_params
         @secure_state ||= SecureRandom.hex(24)
         {
-          :response => "code",
-          :client_id =>  OmniAuth::Wanliu.config[:app_id],
+          :response => "code",          
+          :client_id =>  OmniAuth::Wanliu.config["app_id"],
           :redirect_uri => "http://#{request.env["HTTP_HOST"]}/auth/wanliuid/callback",
           :state =>  @secure_state     
         }

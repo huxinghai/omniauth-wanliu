@@ -71,7 +71,7 @@ describe OmniAuth::Strategies::WanliuId do
             @auth_params = @controller.auth_params
         end
         
-        it "should have correct headers info " do         
+        it "should have correct headers info " do 
             headers = @controller.response.headers               
             headers["sso_auth_url"].should eq(subject.client.options[:authorize_url])
             headers["sso_auth_params"].should eq(@auth_params.to_json)            
@@ -79,6 +79,10 @@ describe OmniAuth::Strategies::WanliuId do
 
         it "should have correct foreg omniauth validate state" do 
             @controller.session["omniauth.state"].should eq(@auth_params[:state])
+        end
+
+        it "should have correct app id " do             
+            @auth_params[:client_id].should eq(OmniAuth::Wanliu.config["app_id"])
         end
     end
 end
