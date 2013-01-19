@@ -3,18 +3,26 @@
 
 // example 
 //    #绑定与设置跨域访问回调方法, 传回参数登陆url
-//    AjaxAuthClient.setupAjaxAuth(function(url){
+//    AjaxAuthClient.setupRetrieveLoginUrlCallback(function(url){
 //    }) 
 //            
-//    #注册成功后回调方法, 传回登陆用户信息
-//    AjaxAuthClient.RegistreSuccess(function(user){
+//    #登陆成功后回调方法, 传回登陆用户信息
+//    AjaxAuthClient.registreLoginSuccess(function(user){
 //    })
+//      
+//    #加载注册页面触发事件
+//    AjaxAuthClient.registreLoadCreateUser(function(){
+//    })
+//
+//    #加载找回密码触发事件
+//    AjaxAuthClient.registreLoadForgotPassword(function(){
+//    })  
 
 var AjaxAuth = function(options){
 
     this.default_params = {
         //iframe消息type
-        message_type : "login_message"                          
+        // message_type : "login_message"                          
     }   
 
     if(!$.pm){ 
@@ -31,11 +39,28 @@ AjaxAuth.prototype.setParams = function(options){
 
 AjaxAuth.prototype.loginSuccessCallback = function(data){}
 
-AjaxAuth.prototype.RegistreLoginSuccess = function(callback){
+//登陆成功触发
+AjaxAuth.prototype.registreLoginSuccess = function(callback){
     if(typeof callback == "function") this.loginSuccessCallback = callback
-    pm.bind(this.default_params.message_type, $.proxy(function(data){             
+    pm.bind("login_message", $.proxy(function(data){             
         this.loginSuccessCallback.apply(this, data)
     }, this)) 
+}
+
+AjaxAuth.prototype.registreLoadCreateUserCallback = function(){}
+
+//加载注册页面触发
+AjaxAuth.prototype.registreLoadCreateUser = function(callback){
+    if(typeof callback == "function") this.registerLoadCreateUserCallback = callback
+    pm.bind("user_register", this.registerLoadCreateUserCallback)
+}
+
+AjaxAuth.prototype.registreLoadForgotPasswordCallback = function(){}
+
+//加载找回密码触发
+AjaxAuth.prototype.registreLoadForgotPassword = function(callback){
+    if(typeof callback == "function") this.registreLoadForgotPasswordCallback = callback
+    pm.bind("user_forgot_password", this.registreLoadForgotPasswordCallback)
 }
 
 AjaxAuth.prototype.setupAjaxAuthCallback = function(url){}

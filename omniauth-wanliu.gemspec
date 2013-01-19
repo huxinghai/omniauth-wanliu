@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["huxinghai1988@gmail.com"]
   gem.description   = %q{wanliu omniauth accounts support ajax login}
   gem.summary       = %q{wanliu omniauth accounts support ajax login}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/wanliu/omniauth-wanliu"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

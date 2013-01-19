@@ -42,7 +42,7 @@ And then execute:
 
 2. 在登陆过虑器方法添加ajax请求<code>ajax_set_response_headers</code>方法设置头部，例如:   
     
-    ```ruby
+    ```js
         def login_required        
             if !current_user                
                 respond_to do |format|    
@@ -58,17 +58,25 @@ And then execute:
 
 3. 客户端引用js文件, 例如:
   
-  ```ruby  
-    #在application.js添加如下代码
+  ```js  
+    //在application.js添加如下代码
     //= require wanliu/ajax_auth_client.js
 
-    #ajax验证， 传参平台登陆页面url
+    //ajax验证， 传参平台登陆页面url
     AjaxAuthClient.setupRetrieveLoginUrlCallback(function(url){                
     })
 
-    #注册登陆成功事件
-    AjaxAuthClient.RegistreLoginSuccess(function(user){        
+    //注册登陆成功事件
+    AjaxAuthClient.registreLoginSuccess(function(user){        
     })
+
+    //加载注册页面触发事件
+    AjaxAuthClient.registreLoadCreateUser(function(){
+    })
+
+    //加载找回密码触发事件
+    AjaxAuthClient.registreLoadForgotPassword(function(){
+    })  
 
   ```
 
